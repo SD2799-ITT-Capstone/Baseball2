@@ -32,21 +32,26 @@ $a[] = "Wenche";
 $a[] = "Vicky";
 
 // get the q parameter from URL
-$q = $_REQUEST["name"];
-$columnName = = $_REQUEST["columnName"];
+$playerName = $_REQUEST["name"];
+$columnName = $_REQUEST["columnName"];
+
+$sqlString = "SELECT DISTINCT  `$columnName` 
+FROM  `Master`
+WHERE  `$columnName`  LIKE '$playerName%';";
+
 
 $hint = "";
 
-// lookup all hints from array if $q is different from "" 
-if ($q !== "") {
-    $q = strtolower($q);
-    $len=strlen($q);
+// lookup all hints from array if $playerName is different from "" 
+if ($playerName !== "") {
+    $playerName = strtolower($playerName);
+    $len=strlen($playerName);
     foreach($a as $name) {
-        if (stristr($q, substr($name, 0, $len))) {
+        if (stristr($playerName, substr($name, 0, $len))) {
             if ($hint === "") {
-                $hint = $name;
+                $hint = $sqlString;
             } else {
-                $hint .= ", $name";
+                $hint .= ", ".$sqlString;
             }
         }
     }

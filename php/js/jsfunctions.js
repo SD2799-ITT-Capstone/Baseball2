@@ -87,7 +87,7 @@ function TeamExpand()
                 $("nameFirstTxtHint").innerHTML = xmlhttp.responseText;
               }
          }
-         xmlhttp.open("GET", "gethint.php?name="+str+"&columnName="+columnName,  true);
+         xmlhttp.open("GET", "gethint.php?name="+str+",table=."+columnName,  true);
          xmlhttp.send();
      }
      }

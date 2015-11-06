@@ -73,7 +73,7 @@ function TeamExpand()
 }
 	
 	
-		function ShowHint(str, column) {
+		function ShowHint(str, columnName) {
 			
 			
      if (str.length == 0) { 
@@ -87,7 +87,7 @@ function TeamExpand()
                 $("nameFirstTxtHint").innerHTML = xmlhttp.responseText;
               }
          }
-         xmlhttp.open("GET", "gethint.php?name="+str+",table=."+column,  true);
+         xmlhttp.open("GET", "gethint.php?name="+str+"&columnName="+columnName,  true);
          xmlhttp.send();
      }
      }

@@ -51,7 +51,7 @@ include("navbar.php");
 <div id="section">
 	<form name="PlayerForm" id="PlayerForm" action="Player.php" method="Post">
 		First name: <input type="text" name="PlayerFirstnameText" onkeyup="ShowHint(this.value, 'nameFirst')" placeholder="first name">
-		Last name: <input type="text" name="PlayerLastname">
+		Last name: <input type="text" name="PlayerLastname"  onkeyup="ShowHint(this.value, 'nameLast')" placeholder="last name" >
 		<input name="submit" type="submit" value="Find Player">
 	</form>
 </div>
